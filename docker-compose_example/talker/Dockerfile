@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y
 #&& catkin_make
 
 RUN mkdir -p /root/catkin_ws/src
+
+RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd /root/catkin_ws/; catkin_make'
+
 COPY start_script.sh /root/catkin_ws/
 RUN chmod +x /root/catkin_ws/start_script.sh
 
