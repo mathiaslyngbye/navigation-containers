@@ -1,9 +1,9 @@
 FROM ros:kinetic-ros-base
 # install ros tutorials packages
 RUN apt-get update && apt-get install -y \
-ros-kinetic-joy \
-ros-kinetic-teleop-twist-joy \
-ros-kinetic-teleop-twist-keyboard \
+#ros-kinetic-joy \
+#ros-kinetic-teleop-twist-joy \
+#ros-kinetic-teleop-twist-keyboard \
 ros-kinetic-laser-proc \
 ros-kinetic-rgbd-launch \
 ros-kinetic-depthimage-to-laserscan \
@@ -18,8 +18,8 @@ ros-kinetic-move-base \
 ros-kinetic-urdf \
 ros-kinetic-xacro \
 ros-kinetic-compressed-image-transport \
-ros-kinetic-rqt-image-view \
-ros-kinetic-gmapping \
+#ros-kinetic-rqt-image-view \
+#ros-kinetic-gmapping \
 ros-kinetic-navigation \
 ros-kinetic-tf2-geometry-msgs
 
