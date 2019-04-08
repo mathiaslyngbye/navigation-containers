@@ -4,19 +4,19 @@ services:
     build: './master'
     container_name: master
     command: roscore
-  
+
+  talker:
+    build: './talker'
+    container_name: talker
+    environment:
+      - "ROS_HOSTNAME=talker"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: bash talker.sh
+
   listener:
     build: './listener'
     container_name: listener
     environment:
       - "ROS_HOSTNAME=listener"
       - "ROS_MASTER_URI=http://master:11311"
-    command: roscore
-
-  talker:
-    build: './talker'
-    container_name: talker
-    environment:
-      - "ROS_HOSTNAME=listener"
-      - "ROS_MASTER_URI=http://master:11311"
-    command: tail -f /dev/null
+    command: bash listener.sh

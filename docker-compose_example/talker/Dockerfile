@@ -6,8 +6,8 @@ RUN mkdir -p /root/catkin_ws/src
 
 RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; cd /root/catkin_ws/; catkin_make'
 
-COPY start_script.sh /root/catkin_ws/
-RUN chmod +x /root/catkin_ws/start_script.sh
+COPY start_script.sh talker.sh
+RUN chmod +x talker.sh
 
 RUN /bin/bash -c "source /opt/ros/kinetic/setup.bash; source /root/catkin_ws/devel/setup.bash; cd /root/catkin_ws && /opt/ros/kinetic/bin/catkin_make && /opt/ros/kinetic/bin/catkin_make -DCMAKE_INSTALL_PREFIX=/opt/ros/kinetic install"
 
