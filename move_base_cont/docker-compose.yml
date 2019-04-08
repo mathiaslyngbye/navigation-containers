@@ -1,0 +1,14 @@
+version: '2'
+services:
+  master:
+    build: './move_base'
+    container_name: move_base
+    command: roscore
+
+  talker:
+    build: './gp_node'
+    container_name: gp_node
+    environment:
+      - "ROS_HOSTNAME=talker"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: bash talker.sh
