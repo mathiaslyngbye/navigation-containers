@@ -13,7 +13,8 @@ spec:
     spec:
       containers:
       - name: rosnode-gp
-        image: ../move_base_cont/move_base
+        image: gp_navigation
+        imagePullPolicy: Never
         args:
         - rostopic
         - echo
