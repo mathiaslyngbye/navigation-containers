@@ -1,0 +1,26 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rostopic-echo
+spec:
+  selector:
+    matchLabels:
+      app: rostopic-echo
+  template:
+    metadata:
+      labels:
+        app: rostopic-echo
+    spec:
+      containers:
+      - name: rostopic-echo
+        image: ros:melodic-ros-core
+        args:
+        - rostopic
+        - echo
+        - chatter
+        env:
+        - name: ROS_MASTER_URI
+          value: http://192.168.9.1:11311
+        - name: ROS_IP
+          value: 192.168.9.1
+      hostNetwork: true
