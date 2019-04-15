@@ -17,3 +17,20 @@ To build the various images located in "./navigation_stack", run the following c
 ``` bash
 sudo docker build -t <image name> .
 ```
+
+## Google
+### Installing the cluster on the robot
+Download and run install_k8s_on_robot.sh. This script will take a few minutes as it downloads and installs the dependencies of the Kubernetes cluster.
+
+``` bash
+curl https://raw.githubusercontent.com/googlecloudrobotics/core/master/src/bootstrap/robot/inst
+all_k8s_on_robot.sh | bash
+```
+
+### Spawning image node
+Deployment is based on the YAML files in the "./google-cloud" directory.
+Use "kubectl" to apply it to your cluster.
+``` bash
+kubectl apply -f <YAML file name>
+```
+
