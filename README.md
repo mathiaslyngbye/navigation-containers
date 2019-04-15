@@ -15,3 +15,4 @@ Delete all images:
 ``` bash
 docker rmi $(docker images -q)
 ```
+Alternately run the included docker_flush.bash script.

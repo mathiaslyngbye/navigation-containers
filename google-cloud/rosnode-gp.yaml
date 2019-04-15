@@ -1,4 +1,4 @@
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rosnode-gp
@@ -13,7 +13,8 @@ spec:
     spec:
       containers:
       - name: rosnode-gp
-        image: ros:melodic-ros-core
+        image: gp_navigation
+        imagePullPolicy: Never
         args:
         - rostopic
         - echo
