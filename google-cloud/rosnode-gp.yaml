@@ -15,9 +15,11 @@ spec:
       - name: rosnode-gp
         image: gp_navfn_node
         imagePullPolicy: Never
+        command: ["/bin/bash", "-c"]
         args:
-        - bash
-        - start_script.sh
+        - source /root/catkin_ws/devel/setup.bash;
+          roslaunch gp_launch gp_navfn_node.launch;
+          echo done;
         env:
         - name: ROS_MASTER_URI
           value: http://192.168.9.1:11311
