@@ -27,10 +27,17 @@ curl https://raw.githubusercontent.com/googlecloudrobotics/core/master/src/boots
 all_k8s_on_robot.sh | bash
 ```
 
-### Spawning image node
+### Kubernetes deployment
 Deployment is based on the YAML files in the "./google-cloud" directory.
 Use "kubectl" to apply it to your cluster.
 ``` bash
 kubectl apply -f <YAML file name>
 ```
-
+Live monitor kubernetes deployments.
+``` bash
+watch kubectl get pods
+```
+Use "kubectl" to delete deployments.
+``` bash
+kubectl delete -f <YAML file name>
+```
