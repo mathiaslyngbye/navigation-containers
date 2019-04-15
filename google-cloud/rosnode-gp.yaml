@@ -16,9 +16,8 @@ spec:
         image: gp_navigation
         imagePullPolicy: Never
         args:
-        - rostopic
-        - echo
-        - chatter
+        - bash
+        - start_script.sh
         env:
         - name: ROS_MASTER_URI
           value: http://192.168.9.1:11311
