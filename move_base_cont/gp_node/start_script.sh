@@ -4,4 +4,4 @@
 
 cd /root/catkin_ws
 source devel/setup.bash
-rosrun beginner_tutorials talker
+roslaunch gp_launch gp_navfn_node
