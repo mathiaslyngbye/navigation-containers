@@ -1,0 +1,13 @@
+<package>
+  <name>navigation-containers</name>
+  <version>1.0.0</version>
+  <description>
+    The navigation-containers package is simply an achor point for finding .yaml files through rospack-find.
+  </description>
+  <license>Apache 2.0</license>
+  <author email="malyn16@student.sdu.dk">Mathias A. Lyngbye</author>
+  <maintainer email="malyn16@student.sdu.dk">Mathias A. Lyngbye</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
+
