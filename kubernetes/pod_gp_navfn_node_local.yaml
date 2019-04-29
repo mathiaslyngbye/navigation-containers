@@ -24,7 +24,7 @@ spec:
         - name: ROS_MASTER_URI
           value: http://10.1.15.33:11311
         - name: ROS_HOSTNAME
-          value: 10.1.15.42
+          value: 10.1.15.33
         resources:
          limits:
            memory: "100Mi"
