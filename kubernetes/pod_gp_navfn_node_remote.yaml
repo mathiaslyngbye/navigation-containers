@@ -1,33 +1,51 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rosnode-gp
+  name: remote-gp
 spec:
   selector:
     matchLabels:
-      app: rosnode-gp
+      app: remote-gp
   template:
     metadata:
       labels:
-        app: rosnode-gp
+        app: remote-gp
     spec:
       containers:
-      - name: rosnode-gp
-        image: gp_navfn_node
+      - name: rosnode-alive
+        image: gp_navnfn_node
         imagePullPolicy: Never
         command: ["/bin/bash", "-c"]
         args:
         - source /root/catkin_ws/devel/setup.bash;
-	  rosrun gp_alive alive;
+          rosrun gp_alive alive;
+          echo done;
+        env:
+        - name: ROS_MASTER_URI
+          value: http://10.126.20.246:11311
+        - name: ROS_HOSTNAME
+          value: 10.126.127.154
+        resources:
+         #limits:
+           #memory: "100Mi"
+           #cpu: "500m"
+
+      - name: rosnode-gp
+        image: gp_navnfn_node
+        imagePullPolicy: Never
+        command: ["/bin/bash", "-c"]
+        args:
+        - source /root/catkin_ws/devel/setup.bash;
           roslaunch gp_launch gp_navfn_node.launch;
           echo done;
         env:
         - name: ROS_MASTER_URI
-          value: http://10.1.15.33:11311
+          value: http://10.126.20.246:11311
         - name: ROS_HOSTNAME
-          value: 10.1.15.42
+          value: 10.126.127.154
         resources:
-         limits:
-           memory: "100Mi"
-           cpu: "500m"
+         #limits:
+           #memory: "100Mi"
+           #cpu: "500m"
+
       hostNetwork: true
