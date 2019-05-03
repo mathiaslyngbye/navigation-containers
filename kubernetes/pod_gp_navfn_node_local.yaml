@@ -22,11 +22,11 @@ spec:
           echo done;
         env:
         - name: ROS_MASTER_URI
-          value: http://10.1.15.33:11311
+          value: http://10.126.20.246:11311
         - name: ROS_HOSTNAME
-          value: 10.1.15.33
-        resources:
-         limits:
-           memory: "100Mi"
-           cpu: "500m"
+          value: 10.126.20.246
+        #resources:
+         #limits:
+         # memory: "100Mi"
+         #  cpu: "500m"
       hostNetwork: true
