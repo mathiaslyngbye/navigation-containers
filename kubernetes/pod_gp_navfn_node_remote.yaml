@@ -18,6 +18,7 @@ spec:
         command: ["/bin/bash", "-c"]
         args:
         - source /root/catkin_ws/devel/setup.bash;
+	  rosrun gp_alive alive;
           roslaunch gp_launch gp_navfn_node.launch;
           echo done;
         env:
