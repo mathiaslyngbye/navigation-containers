@@ -24,7 +24,7 @@ spec:
         - name: ROS_MASTER_URI
           value: http://10.126.20.246:11311
         - name: ROS_HOSTNAME
-          value: 10.126.127.154
+          value: 10.126.20.246 
         resources:
          #limits:
            #memory: "100Mi"
@@ -42,7 +42,7 @@ spec:
         - name: ROS_MASTER_URI
           value: http://10.126.20.246:11311
         - name: ROS_HOSTNAME
-          value: 10.126.127.154
+          value: 10.126.20.246
         resources:
          #limits:
            #memory: "100Mi"
